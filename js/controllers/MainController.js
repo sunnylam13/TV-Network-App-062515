@@ -1,7 +1,6 @@
 app.controller('MainController', ['$scope', function($scope) {
 
 	/* 
-	* VERSION 2
 	* in this version I changed $scope.program to $scope.programs...
 	* converted it into an array instead to match what I did in Directives.1
 	*/
@@ -29,23 +28,5 @@ app.controller('MainController', ['$scope', function($scope) {
   	}
   ];
 
-  ////////////////////////////////////////////
-  ///// 		ORIGINAL TEMPLATE
-  ///////////////////////////////////////////////
-  	  // $scope.program = {
-  	  // 	series: "Sherlock",
-  			// // series_img: "img/sherlock.jpg",
-  			// series_img: "http://lorempixel.com/200/200",
-  	  // 	genre: "Crime drama",
-  	  // 	season: 3,
-  	  // 	episode: "The Empty Hearse",
-  	  // 	description: "Two years after his reported Reichenbach Fall demise, Sherlock, who has been cleared of all fraud charges against him, returns with Mycroft's help to a London under threat of terrorist attack. John has moved on and has a girlfriend, Mary Morstan. Sherlock enlists Molly to assist him, but when John is kidnapped by unknown assailants and is rescued by Sherlock and Mary, John returns to help find the terrorists and an underground plot to blow up the Houses of Parliament during an all night sitting on Guy Fawkes Night",
-  	  // 	datetime: new Date(2014, 11, 31, 21, 00, 00, 00)
-  	  // };
-  ///////////////////////////////////////////////
-  ///// 		END ORIGINAL TEMPLATE
-  ///////////////////////////////////////////////
-
-    
 
 }]);
