@@ -1,8 +1,7 @@
 app.directive('programListing', function() {
   return {
-    restrict: 'AE',
+    restrict: 'E',
     scope: {
-    	datasource: '=',
       listing: '='
     },
     templateUrl: 'js/directives/programListing.html'

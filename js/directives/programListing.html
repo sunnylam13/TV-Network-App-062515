@@ -1,26 +1,34 @@
+<!-- ====================================
+Friday, June 26, 2015 3:52 PM
+placing the ng-repeat inside of the template seems to work better than placing it within the controller area in index.html
+placing ng-repeat on the <program-listing> custom element is wrong because we're not cloning that... we're cloning .row 
+WARNING:  watch for Javascript errors that break the code... like when I forgot to add the closing quote '' for date:'longDate' below
+NOTE:  you passed the entire $scope.programs array into the listing=""... you then used ng-repeat to loop through and display each object in the array... however the actual data was even deeper in the object as properties, which you needed to access using foreach loop "prop"
+==================================== -->
+
 <div class="row" ng-repeat="prop in listing">   
   <div class="col-md-3" class="series_img">
-    <img ng-src="{{ listing.series_img }}">
+    <img ng-src="{{ prop.series_img }}">
   </div>
 
   <div class="col-md-6">
-    <h1 class="series">{{ listing.series }}</h1>
-    <h2 class="episode">{{ listing.episode }}</h2>
-    <p class="description">{{ listing.description }}</p>
+    <h1 class="series">{{ prop.series }}</h1>
+    <h2 class="episode">{{ prop.episode }}</h2>
+    <p class="description">{{ prop.description }}</p>
   </div>
 
   <div class="col-md-3">
     <ul class="list-group">
       
-      <li class="list-group-item"><span>Date:</span> {{ listing.datetime | date:'longDate }}</li>
+      <li class="list-group-item"><span>Date:</span> {{ prop.datetime | date:'longDate' }}</li>
       
-      <li class="list-group-item"><span>On air:</span> {{ listing.datetime | date:'EEEE' }}</li>
+      <li class="list-group-item"><span>On air:</span> {{ prop.datetime | date:'EEEE' }}</li>
             
-      <li class="list-group-item"><span>Time:</span> {{ listing.datetime | date:'mediumTime' }}</li>
+      <li class="list-group-item"><span>Time:</span> {{ prop.datetime | date:'mediumTime' }}</li>
             
-      <li class="list-group-item"><span>Season:</span> {{ listing.season }}</li>
+      <li class="list-group-item"><span>Season:</span> {{ prop.season }}</li>
             
-      <li class="list-group-item"><span>Genre:</span> {{ listing.genre }}</li>
+      <li class="list-group-item"><span>Genre:</span> {{ prop.genre }}</li>
       
     </ul>
   </div>
